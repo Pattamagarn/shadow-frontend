@@ -16,11 +16,44 @@ const SignIn = () => {
         setAccount({...account, password:password.target.value})
     }
 
+    const alertSuccess = (payload) => {
+        Swal.fire({
+            title: 'สำเร็จ',
+            text: payload,
+            icon: 'success',
+            confirmButtonText: 'ตกลง'
+        })
+        setAccount({email:'', password:''})
+    }
+
+    const alertError = (payload) => {
+        Swal.fire({
+            title: 'ล้มเหลว',
+            text: payload,
+            icon: 'error',
+            confirmButtonText: 'ตกลง'
+        })
+    }
+
+    const alertWarning = (payload) => {
+        Swal.fire({
+            title: 'คำเตือน',
+            text: payload,
+            icon: 'warning',
+            confirmButtonText: 'ตกลง'
+        })
+    }
+
+    const handleSignInAccount = (event) => {
+        event.preventDefault()
+
+    }
+
     return(
         <>
         <MetaHeader title={`เข้าสู่ระบบ`} />
         <div className='container mx-auto w-full h-full flex justify-center'>
-            <form className={`p-10 rounded bg-[#33007B]`}>
+            <form onSubmit={handleSignInAccount} className={`p-10 rounded bg-[#33007B]`}>
                 <div className='flex justify-center align-middle'>
                 <Icon icon={"game-icons:minerals"} className='text-[#F000B8]' width={48} height={48} />
                 <h4 className='text-5xl text-center text-[#FFFFFF]'>SHADOW</h4>
