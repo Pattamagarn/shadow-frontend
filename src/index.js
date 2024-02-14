@@ -1,13 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+// import App from './App';
+import reportWebVitals from './reportWebVitals'
+import SignUp from './pages/sign-up/SignUp'
+import SignIn from './pages/sign-in/SignIn'
+import ForgotPassword from './pages/forgot-password/ForgotPassword'
 
+document.body.className = 'font-Kanit'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route index path='/' element={<SignIn />} />
+        <Route exact path='/sign-up' element={<SignUp />} />
+        <Route exact path='/sign-in' element={<SignIn />} />
+        <Route exact path='/forgot-password' element={<ForgotPassword />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
