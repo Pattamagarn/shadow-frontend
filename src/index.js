@@ -4,6 +4,7 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // import App from './App';
 import reportWebVitals from './reportWebVitals'
+import Home from './pages/home/Home'
 import SignUp from './pages/sign-up/SignUp'
 import SignIn from './pages/sign-in/SignIn'
 import ForgotPassword from './pages/forgot-password/ForgotPassword'
@@ -14,7 +15,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route index path='/' element={<SignIn />} />
+        <Route index path='/' element={<Home />} />
         <Route exact path='/sign-up' element={<SignUp />} />
         <Route exact path='/sign-in' element={<SignIn />} />
         <Route exact path='/forgot-password' element={<ForgotPassword />} />

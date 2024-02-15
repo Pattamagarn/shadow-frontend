@@ -3,11 +3,24 @@ import MetaHeader from '../../components/meta-header/MetaHeader'
 import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Swal from 'sweetalert2'
+import { signInAccount } from '../../service/authentication'
+import axios from 'axios'
 
 const SignIn = () => {
+    const navigate = useNavigate()
+
     const [account, setAccount] = useState({email:'', password:''})
     const [hide, setHide] = useState(true)
 
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API}/authentication-account`, {withCredentials: true})
+        .then((response) => {
+            if(response.data.status){
+                 navigate('/')
+            }
+        })
+    }, [account])
+    
     const setEmail = (email) => {
         setAccount({...account, email:email.target.value})
     }
@@ -46,7 +59,7 @@ const SignIn = () => {
 
     const handleSignInAccount = (event) => {
         event.preventDefault()
-
+        signInAccount(account, alertSuccess, alertError, alertWarning)
     }
 
     return(

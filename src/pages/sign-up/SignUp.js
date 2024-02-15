@@ -21,6 +21,15 @@ const SignIn = () => {
     const [hide, setHide] = useState(true)
     const [hide2, setHide2] = useState(true)
 
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API}/authentication-account`, {withCredentials: true})
+        .then((response) => {
+            if(response.data.status){
+                 navigate('/')
+            }
+        })
+    }, [account])
+    
     const setUsername = (username) => {
         setAccount({...account, username:username.target.value})
     }

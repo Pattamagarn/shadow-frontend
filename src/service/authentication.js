@@ -1,5 +1,5 @@
 import app from './connection'
-import { getAuth, createUserWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
 import axios from 'axios'
 
 const authentication = getAuth(app)
@@ -33,6 +33,26 @@ export const signUpAccount = (account, alertSuccess, alertError, alertWarning) =
         }else{
             alertError('เกิดข้อผิดพลาดที่ไม่รู้จัก')
         }
+    })
+}
+
+export const signInAccount = (account, alertSuccess, alertError, alertWarning) => {
+    signInWithEmailAndPassword(authentication, account.email.toLowerCase(), account.password)
+    .then((userCredential) => {
+        axios.post(`${process.env.REACT_APP_API}/sign-in-account`, {email: userCredential.user.email}, {withCredentials: true})
+        .then((response) => {
+            if(response.data.status){
+                alertSuccess("เข้าสู่ระบบสำเร็จ")
+            }else{
+                alertWarning(response.data.payload)
+            }
+        })
+        .catch((error) => {
+            alertError('เกิดข้อผิดพลาดที่ไม่รู้จัก')
+        })
+    })
+    .catch((error) => {
+        alertWarning('ชื่อผู้ใช้ หรือรหัสผ่านไม่ถูกต้อง')
     })
 }
 
