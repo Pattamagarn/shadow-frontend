@@ -30,7 +30,8 @@ const Navigation = () => {
 
     return(
         <>
-            {role.length > 1 ? <NavbarGuest/> : isLogin.role ? <NavbarAdmin/> : <NavbarMember/>}
+            <NavbarMember/>
+            {/* {role.length > 1 ? <NavbarGuest/> : isLogin.role ? <NavbarAdmin/> : <NavbarMember/>} */}
         </>
         
     )
