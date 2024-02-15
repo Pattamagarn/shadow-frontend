@@ -3,6 +3,7 @@ import MetaHeader from '../../components/meta-header/MetaHeader'
 import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
+import Navigation from '../../components/navbar/Navigation'
 
 const Home = () => {
     const navigate = useNavigate()
@@ -11,7 +12,7 @@ const Home = () => {
         axios.get(`${process.env.REACT_APP_API}/authentication-account`, {withCredentials: true})
         .then((response) => {
             if(!response.data.status){
-                 navigate('/sign-in')
+                // navigate('/sign-in')
             }
         })
     }, [])
@@ -46,7 +47,8 @@ const Home = () => {
     return (
         <>
         <MetaHeader title={`หน้าหลัก`} />
-        <button className='btn btn-primary'>คลิกฉันสิ</button>
+        <Navigation/>
+        <Link to='/' className='btn btn-primary'>คลิกฉันสิ</Link>
         </>
     )
 }

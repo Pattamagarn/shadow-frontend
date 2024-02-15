@@ -5,9 +5,7 @@ import { Icon } from '@iconify/react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 import { signUpAccount } from '../../service/authentication'
-import NavbarGuest from '../../components/navbar/NavbarGuest'
-import NavbarAdmin from '../../components/navbar/NavbarAdmin'
-import NavbarMember from '../../components/navbar/NavbarMember'
+import Navigation from '../../components/navbar/Navigation'
 
 const SignIn = () => {
     const navigate = useNavigate()
@@ -28,7 +26,7 @@ const SignIn = () => {
         axios.get(`${process.env.REACT_APP_API}/authentication-account`, {withCredentials: true})
         .then((response) => {
             if(response.data.status){
-                 navigate('/')
+                navigate('/')
             }
         })
     }, [account])
@@ -123,7 +121,7 @@ const SignIn = () => {
     return(
         <>
         <MetaHeader title={`สร้างบัญชี`} />
-        <NavbarGuest/>
+        <Navigation/>
         <div className='container mx-auto w-full h-full flex justify-center mt-5'>
             <form onSubmit={createAccount} className={`p-10 rounded bg-[#33007B]`}>
                 <div className='flex justify-center align-middle'>
@@ -155,7 +153,7 @@ const SignIn = () => {
                     </Link>
                 </div>
                 <div className='form-control w-full max-w-xs mt-5'>
-                    <p>ความต้องการของรหัสผ่าน:</p>
+                    <p className='text-[#FFFFFF]'>ความต้องการของรหัสผ่าน:</p>
                     <ul>
                         <li className={`${passwordRequireMent.minimumLength ? 'text-success' : 'text-error'}`}>* ความยาวรหัสผ่านอย่างน้อย 8 ตัว</li>
                         <li className={`${passwordRequireMent.alphabetLower ? 'text-success' : 'text-error'}`}>* มีตัวอักษรพิมพ์เล็กอย่างน้อย 1 ตัว</li>

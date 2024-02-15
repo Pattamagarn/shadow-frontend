@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Swal from 'sweetalert2'
 import { signInAccount } from '../../service/authentication'
-import NavbarGuest from '../../components/navbar/NavbarGuest'
+import Navigation from '../../components/navbar/Navigation'
 import axios from 'axios'
 
 const SignIn = () => {
@@ -17,7 +17,7 @@ const SignIn = () => {
         axios.get(`${process.env.REACT_APP_API}/authentication-account`, {withCredentials: true})
         .then((response) => {
             if(response.data.status){
-                 navigate('/')
+                navigate('/')
             }
         })
     }, [account])
@@ -66,7 +66,7 @@ const SignIn = () => {
     return(
         <>
         <MetaHeader title={`เข้าสู่ระบบ`} />
-        <NavbarGuest />
+        <Navigation />
         <div className='container mx-auto w-full h-full flex justify-center mt-5'>
             <form onSubmit={handleSignInAccount} className={`p-10 rounded bg-[#33007B]`}>
                 <div className='flex justify-center align-middle'>
