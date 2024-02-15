@@ -46,7 +46,7 @@ const Home = () => {
     return (
         <>
         <MetaHeader title={`หน้าหลัก`} />
-        <h1>Hello</h1>
+        <button className='btn btn-primary'>คลิกฉันสิ</button>
         </>
     )
 }
