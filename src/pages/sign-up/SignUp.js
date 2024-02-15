@@ -5,6 +5,9 @@ import { Icon } from '@iconify/react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 import { signUpAccount } from '../../service/authentication'
+import NavbarGuest from '../../components/navbar/NavbarGuest'
+import NavbarAdmin from '../../components/navbar/NavbarAdmin'
+import NavbarMember from '../../components/navbar/NavbarMember'
 
 const SignIn = () => {
     const navigate = useNavigate()
@@ -120,7 +123,8 @@ const SignIn = () => {
     return(
         <>
         <MetaHeader title={`สร้างบัญชี`} />
-        <div className='container mx-auto w-full h-full flex justify-center'>
+        <NavbarGuest/>
+        <div className='container mx-auto w-full h-full flex justify-center mt-5'>
             <form onSubmit={createAccount} className={`p-10 rounded bg-[#33007B]`}>
                 <div className='flex justify-center align-middle'>
                 <Icon icon={"game-icons:minerals"} className='text-[#F000B8]' width={48} height={48} />
