@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React,{ useEffect,useState } from 'react';
 import DataTable from 'react-data-table-component';
+import Navigation from '../../components/navbar/Navigation';
 
 const GeneralManage = () => {
 
@@ -154,6 +155,7 @@ const GeneralManage = () => {
 
     return(
         <div className='container mx-auto'>
+            <Navigation/>
             {/*banner */}
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">

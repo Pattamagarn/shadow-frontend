@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React,{ useEffect,useState } from 'react';
 import DataTable from 'react-data-table-component';
+import Navigation from '../../components/navbar/Navigation';
 
 const ProductManage = () => {
     const [data_general,setData_general] = useState([])
@@ -231,6 +232,7 @@ const ProductManage = () => {
     return(
         
         <div className="container">
+            <Navigation/>
             {/*ชื่อหัวข้อทั่วไป + ปุ่ม */}
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">

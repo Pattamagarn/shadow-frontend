@@ -17,6 +17,10 @@ import AuctionProduct from './pages/product/auction-product/AuctionProduct'
 import GachaProduct from './pages/product/gacha-product/GachaProduct'
 import GeneralProduct from './pages/product/general-product/GeneralProduct'
 import SaleProduct from './pages/product/sale-product/SaleProduct'
+import TopUp from './pages/top-up/TopUp'
+import Transaction from './pages/transactions/Transaction'
+import MyProfile from './pages/my-profile/MyProfile'
+import MyStore from './pages/my-store/MyStore'
 
 document.body.className = 'font-Kanit'
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -37,6 +41,11 @@ root.render(
         <Route exact path='/gacha-product' element={<GachaProduct />} />
         <Route exact path='/general-product' element={<GeneralProduct />} />
         <Route exact path='/sale-product' element={<SaleProduct />} />
+        <Route exact path='/top-up' element={<TopUp />} />
+        <Route exact path='/transaction' element={<Transaction />} />
+        <Route exact path='/my-profile' element={<MyProfile />} />
+        <Route exact path='/my-store' element={<MyStore />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

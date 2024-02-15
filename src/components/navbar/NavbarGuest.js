@@ -19,7 +19,7 @@ const NavbarGuest = () => {
                             <Link to='/gacha-product'><li><a>สินค้าสุ่มกาชา</a></li></Link>
                         </ul>
                     </div>
-                    <Link><a className='btn bg-accent text-m px-10 hover:bg-[#d7ab43]'>เติม Aysel</a></Link>
+                    <Link to='/top-up'><a className='btn bg-accent text-m px-10 hover:bg-[#d7ab43]'>เติม Aysel</a></Link>
                     <Link to='/sign-in' className=' text-[#3FC3EE] hover:text-[#46a5c4] flex'><a className='btn bg-accent text-m px-10 hover:bg-[#d7ab43]'>เข้าสู่ระบบ</a></Link>
                     <Link to='/sign-up' className=' text-[#3FC3EE] hover:text-[#46a5c4] flex'><a className='btn bg-accent text-m px-10 hover:bg-[#d7ab43]'>สมัครสมาชิก</a></Link>
                 </div>

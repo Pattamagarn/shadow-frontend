@@ -11,13 +11,13 @@ const NavbarAdmin = () => {
                 </div>
                 <div className='gap-2'>
                     <Link><a className='btn bg-accent text-m px-10'>วิเคราะห์ข้อมูล</a></Link>
-                    <Link><a className='btn bg-accent text-m px-10'>จัดการทั่วไป</a></Link>
-                    <Link><a className='btn bg-accent text-m px-10'>จัดการบัญชีผูิ้ใช้</a></Link>
-                    <Link><a className='btn bg-accent text-m px-10'>จัดการสินค้า</a></Link>
+                    <Link to='/general-management'><a className='btn bg-accent text-m px-10'>จัดการทั่วไป</a></Link>
+                    <Link ><a className='btn bg-accent text-m px-10'>จัดการบัญชีผู้ใช้</a></Link>
+                    <Link to='/product-management'><a className='btn bg-accent text-m px-10'>จัดการสินค้า</a></Link>
                     <div className='dropdown'>
                         <div tabIndex={0} role='button' className='btn border-none px-3 bg-primary text-white'> <RiAccountCircleLine size='40px' /> my profile</div>
                         <ul tabIndex={0} className='dropdown-content z-[1] menu p-2 border-none bg-info text-primary rounded-box w-full'>
-                            <Link><li><a>โปรไฟล์ของฉัน</a></li></Link>
+                            <Link to='/my-profile'><li><a>โปรไฟล์ของฉัน</a></li></Link>
                             <Link><li><a>ออกจากระบบ</a></li></Link>
                         </ul>
                     </div>
