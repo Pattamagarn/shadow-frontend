@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Swal from 'sweetalert2'
 import { signInAccount } from '../../service/authentication'
+import NavbarGuest from '../../components/navbar/NavbarGuest'
 import axios from 'axios'
 
 const SignIn = () => {
@@ -65,7 +66,8 @@ const SignIn = () => {
     return(
         <>
         <MetaHeader title={`เข้าสู่ระบบ`} />
-        <div className='container mx-auto w-full h-full flex justify-center'>
+        <NavbarGuest />
+        <div className='container mx-auto w-full h-full flex justify-center mt-5'>
             <form onSubmit={handleSignInAccount} className={`p-10 rounded bg-[#33007B]`}>
                 <div className='flex justify-center align-middle'>
                 <Icon icon={"game-icons:minerals"} className='text-[#F000B8]' width={48} height={48} />
