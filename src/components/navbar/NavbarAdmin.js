@@ -15,7 +15,7 @@ const NavbarAdmin = () => {
                     <Link ><a className='btn bg-accent text-m px-10'>จัดการบัญชีผู้ใช้</a></Link>
                     <Link to='/product-management'><a className='btn bg-accent text-m px-10'>จัดการสินค้า</a></Link>
                     <div className='dropdown'>
-                        <div tabIndex={0} role='button' className='btn border-none px-3 bg-primary text-white'> <RiAccountCircleLine size='40px' /> my profile</div>
+                        <div tabIndex={0} role='button' className='btn border-none px-3 bg-primary text-white hover:bg-primary'> <RiAccountCircleLine size='40px' /> my profile</div>
                         <ul tabIndex={0} className='dropdown-content z-[1] menu p-2 border-none bg-info text-primary rounded-box w-full'>
                             <Link to='/my-profile'><li><a>โปรไฟล์ของฉัน</a></li></Link>
                             <Link><li><a>ออกจากระบบ</a></li></Link>

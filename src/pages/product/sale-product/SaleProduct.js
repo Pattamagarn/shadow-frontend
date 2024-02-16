@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import Navigation from '../../../components/navbar/Navigation';
 
 const SaleProduct = () => {
-    return(
+    return (
         <>
-        <Navigation/>
-        <Link to='/' className='btn btn-primary'>click me to home</Link>
+            <Navigation />
+            <Link to='/' className='btn btn-primary'>click me to home</Link>
         </>
     )
 }
