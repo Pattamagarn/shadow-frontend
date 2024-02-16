@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// import App from './App';
 import reportWebVitals from './reportWebVitals'
 import Home from './pages/home/Home'
 import SignUp from './pages/sign-up/SignUp'
@@ -30,6 +29,8 @@ import UpdateGameName from './pages/update-product/UpdateGameName'
 import UpdateGeneralProduct from './pages/update-product/UpdateGeneralProduct'
 import UpdatePaymentMethodInfo from './pages/update-product/UpdatePaymentMethodInfo'
 import UpdatePaymentMethodVideo from './pages/update-product/UpdatePaymentMethodVideo'
+import Analysis from './pages/analysis/Analysis'
+import MemberManage from './pages/member-management/MemberManage'
 
 document.body.className = 'font-Kanit'
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -43,6 +44,7 @@ root.render(
         <Route exact path='/forgot-password' element={<ForgotPassword />} />
         <Route exact path='/general-management' element={<GeneralManage />} />
         <Route exact path='/product-management' element={<ProductManage />} />
+        <Route exact path='/member-management' element={<MemberManage />} />
         <Route exact path='/insert-auction-product' element={<InsertAuctionProduct />} />
         <Route exact path='/insert-gacha-product' element={<InsertGachaProduct />} />
         <Route exact path='/insert-general-product' element={<InsertGeneralProduct />} />
@@ -54,6 +56,18 @@ root.render(
         <Route exact path='/transaction' element={<Transaction />} />
         <Route exact path='/my-profile' element={<MyProfile />} />
         <Route exact path='/my-store' element={<MyStore />} />
+        <Route exact path='/insert-banner' element={<InsertBanner />} />
+        <Route exact path='/insert-game-name' element={<InsertGameName />} />
+        <Route exact path='/update-auction-product' element={<UpdateAuctionProduct />} />
+        <Route exact path='/update-gacha-product' element={<UpdateGachaProduct />} />
+        <Route exact path='/update-general-product' element={<UpdateGeneralProduct />} />
+        <Route exact path='/update-banner' element={<UpdateBanner />} />
+        <Route exact path='/update-game-name' element={<UpdateGameName />} />
+        <Route exact path='/update-payment-method-info' element={<UpdatePaymentMethodInfo />} />
+        <Route exact path='/update-payment-method-Video' element={<UpdatePaymentMethodVideo />} />
+        <Route exact path='/analysis' element={<Analysis />} />
+        
+
 
       </Routes>
     </BrowserRouter>
