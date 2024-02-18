@@ -1,23 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-import { RiAccountCircleLine } from "react-icons/ri";
-import { Icon } from '@iconify/react'
+// import { Icon } from '@iconify/react'
+import Swal from 'sweetalert2'
 import axios from 'axios';
 
 const NavbarMember = () => {
 
     const [data,setData] = useState([])
+    // const [isLogin,setIsLogin] = useState('')
+    const navigate = useNavigate()
 
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/authentication-account`,{withCredentials: true} )
         .then((response) => {
             setData(response.data.payload)
-            // console.log(response.data.payload)
+            
             
         })
         .catch((error) => {})
     },[])
+
+
+    const success = (msg) => {
+        Swal.fire({
+            title : 'สำเร็จ',
+            text : msg,
+            icon : 'success',
+            confirmButtonText : 'OK'
+        })
+        navigate('/')
+    }
+
+    const unsuccess = (msg) => {
+        Swal.fire({
+            title : 'ไม่สำเร็จ',
+            text : msg,
+            icon : 'error',
+            confirmButtonText : 'OK'
+        })
+    }
 
     return (
         <div>
@@ -46,7 +68,7 @@ const NavbarMember = () => {
                             <Link to='/my-profile'><li><a>โปรไฟล์ของฉัน</a></li></Link>
                             <Link to='/my-store'><li><a>คลังสินค้าของฉัน</a></li></Link>
                             <Link to='/transaction'><li><a>ธุรกรรมของฉัน</a></li></Link>
-                            <Link><li><a>ออกจากระบบ</a></li></Link>
+                            <Link to='/' ><li><a>ออกจากระบบ</a></li></Link>
                         </ul>
                     </div>
                 </div>

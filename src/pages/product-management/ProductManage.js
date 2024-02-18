@@ -240,11 +240,12 @@ const ProductManage = () => {
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">
                     <div className="text text-3xl text-primary">จัดการสินค้า</div>
-                    <button className="btn btn-success btn-sm mx-5">เพิ่มสินค้า</button>
+                    <Link to='/insert-general-product'><button className="btn btn-success btn-sm mx-5">เพิ่มสินค้า</button></Link>
                 </div>
                 
-                <hr className="w-11/12 h-2 my-5 border-10 bg-primary"/>
+                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
             </div>
+        
             <div className='container mt-5 px-40'>
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergeneral}></input></div>
                 <DataTable
@@ -262,11 +263,12 @@ const ProductManage = () => {
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">
                     <div className="text text-3xl text-primary">จัดการสินค้ากาชาปอง</div>
-                    <button className="btn btn-success btn-sm mx-5">เพิ่มสินค้ากาชาปอง</button>
+                    <Link to='/insert-gacha-product'><button className="btn btn-success btn-sm mx-5">เพิ่มสินค้ากาชาปอง</button></Link>
                 </div>
                 
-                <hr className="w-11/12 h-2 my-5 border-10 bg-primary"/>
+                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
             </div>
+            
             <div className='container mt-5 px-40'>
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergacha}></input></div>
                 <DataTable
@@ -284,11 +286,12 @@ const ProductManage = () => {
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">
                     <div className="text text-3xl text-primary">จัดการสินค้าประมูล</div>
-                    <button className="btn btn-success btn-sm mx-5">เพิ่มสินค้าประมูล</button>
+                    <Link to='/insert-auction-product'><button className="btn btn-success btn-sm mx-5">เพิ่มสินค้าประมูล</button></Link>
                 </div>
                 
-                <hr className="w-11/12 h-2 my-5 border-10 bg-primary"/>
+                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
             </div>
+            
             <div className='container mt-5 px-40'>
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterauction}></input></div>
                 <DataTable

@@ -12,6 +12,7 @@ const Navigation = () => {
     const navigate = useNavigate()
     const [isLogin,setIslogin] = useState('')
     const [role,setRole] = useState('')
+    let cookie = document.cookie
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/authentication-account`, {withCredentials: true})
@@ -26,7 +27,11 @@ const Navigation = () => {
     },[])
 
 
-
+    const ShowCookie = () => {
+        return(
+            <div>{cookie}</div>
+        )
+    }
 
     return(
         <>

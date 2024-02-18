@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Selection from "../../components/select/Selection";
 import InputProduct from "../../components/input-product/InputProduct";
+import Navigation from "../../components/navbar/Navigation";
+import MetaHeader from "../../components/meta-header/MetaHeader";
 import axios from 'axios'
 
 const InsertGeneralProduct = () => {
@@ -24,12 +27,17 @@ const InsertGeneralProduct = () => {
 
     return (
         <div className="container mx-auto">
+             <MetaHeader title={`เพิ่มสินค้า`} />
+            <Navigation/>
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">
-                    <div className="text text-4xl text-primary">เพิ่มสินค้า</div>
+                    <div className="text text-3xl text-primary">เพิ่มสินค้า</div>
+                    
                 </div>
-                <hr className="w-11/12 h-2 my-5 border-10 bg-primary" />
+                
+                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
             </div>
+            
             <div className="grid mx-auto">
                 <InputProduct title='ชื่อสินค้า' type="text" placeholder="ชื่อสินค้า" className="input w-full max-w-xs bg-neutral " />
 
@@ -48,8 +56,8 @@ const InsertGeneralProduct = () => {
                 </div>
             </div>
             <div className="flex flex-row mt-20 mb-10 mx-44 w-4/12 gap-x-16">
-                <button className="btn btn-success w-5/12">ยืนยันการเพิ่มสินค้า {console.log(`$info`)}</button>
-                <button className="btn btn-error w-5/12">ยกเลิกการเพิ่มสินค้า</button>
+                <Link to='/product-management'><button className="btn btn-success w-max">ยืนยันการเพิ่มสินค้า {console.log(`$info`)}</button></Link>
+                <Link to='/product-management'><button className="btn btn-error w-max">ยกเลิกการเพิ่มสินค้า</button></Link>
             </div>
         </div>
     )

@@ -1,10 +1,11 @@
 import React,{ useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-import { RiAccountCircleLine } from "react-icons/ri";
+import Swal from 'sweetalert2'
 import axios from 'axios';
 
 const NavbarAdmin = () => {
 
+    const navigate = useNavigate()
     const [data,setData] = useState([])
 
 
@@ -17,6 +18,26 @@ const NavbarAdmin = () => {
         })
         .catch((error) => {})
     },[])
+
+
+    const success = (msg) => {
+        Swal.fire({
+            title : 'สำเร็จ',
+            text : msg,
+            icon : 'success',
+            confirmButtonText : 'OK'
+        })
+        navigate('/')
+    }
+
+    const unsuccess = (msg) => {
+        Swal.fire({
+            title : 'ไม่สำเร็จ',
+            text : msg,
+            icon : 'error',
+            confirmButtonText : 'OK'
+        })
+    }
 
     return (
         <div>

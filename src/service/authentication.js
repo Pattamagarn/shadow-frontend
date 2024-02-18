@@ -56,6 +56,7 @@ export const signInAccount = (account, alertSuccess, alertError, alertWarning) =
     })
 }
 
+
 export const resetPasswordAccount = (email, alertSuccess, alertError, alertWarning) => {
     sendPasswordResetEmail(authentication, email)
     .then(() => {

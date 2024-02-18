@@ -8,7 +8,7 @@ import { Icon } from '@iconify/react'
 const MemberManage = () => {
     const [data_member, setData_member] = useState([])
     const [record_member, setRecord_member] = useState([])
-    const [memberId, setMemberid] = useState([{id:1},{id:2}])
+    const [memberId, setMemberid] = useState([{ id: 1 }, { id: 2 }])
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/account-select`)
             .then((response) => {
@@ -73,7 +73,8 @@ const MemberManage = () => {
                     <div className="flex flex-row">
                         <div className="text text-3xl text-primary">จัดการบัญชีผู้ใช้</div>
                     </div>
-                    <hr className="w-11/12 h-2 my-5 border-10 bg-primary" />
+
+                    <hr className="w-full h-2 my-5 border-10 bg-primary" />
                 </div>
                 <div className='container mt-5 px-40'>
                     <div className='text-end'> <input type='text' placeholder='ชื่อบัญชีหรือชื่อผู้ใช้' onChange={filtermember}></input></div>

@@ -1,9 +1,14 @@
 import axios from 'axios'
 import React,{ useEffect,useState } from 'react';
+import { Link } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import Navigation from '../../components/navbar/Navigation';
 
 const GeneralManage = () => {
+    
+    const [data_banner,setData_Banner] = useState([])
+    const [data_game_name,setData_game] = useState([])
+    const [data_payment_method,setData_payment_method] = useState([])
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/banner-select`)
@@ -137,9 +142,7 @@ const GeneralManage = () => {
         },
     ]
 
-    const [data_banner,setData_Banner] = useState([])
-    const [data_game_name,setData_game] = useState([])
-    const [data_payment_method,setData_payment_method] = useState([])
+
     const handleClick = (title) => {
         console.log(`You clicked me! ${title}`);
     };
@@ -159,8 +162,8 @@ const GeneralManage = () => {
             {/*banner */}
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">การจัดการแบบนเนอร์</div>
-                    <button className="btn btn-success btn-sm mx-5">เพิ่มแบนเนอร์</button>
+                    <div className="text text-3xl text-primary">การจัดการแบนเนอร์</div>
+                    <Link to='/insert-banner'><button className="btn btn-success btn-sm mx-5">เพิ่มแบนเนอร์</button></Link>
                 </div>
                 
                 <hr className="w-full h-2 my-5 border-10 bg-primary"/>
@@ -182,7 +185,7 @@ const GeneralManage = () => {
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">
                     <div className="text text-3xl text-primary">การจัดการชื่อเกม</div>
-                    <button className="btn btn-success btn-sm mx-5">เพิ่มชื่อเกม</button>
+                    <Link to='/insert-game-name'><button className="btn btn-success btn-sm mx-5">เพิ่มชื่อเกม</button></Link>
                 </div>
                 
                 <hr className="w-full h-2 my-5 border-10 bg-primary"/>
