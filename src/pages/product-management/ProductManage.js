@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import React,{ useEffect,useState } from 'react';
+import { Icon } from '@iconify/react'
 import DataTable from 'react-data-table-component';
 import Navigation from '../../components/navbar/Navigation';
 import MetaHeader from "../../components/meta-header/MetaHeader";
@@ -252,6 +253,7 @@ const ProductManage = () => {
                     fixedHeader
                     pagination 
                     persistTableHead={true}
+                    minRows={5}
                 >
                 </DataTable>
             </div>
