@@ -53,7 +53,7 @@ const NavbarAdmin = () => {
                     <div className='dropdown'>
                     <div tabIndex={0} role='button' className='btn border-none px-3 w-32 bg-primary text-white hover:bg-primary'> <img src={`${process.env.REACT_APP_ASSET}${data.avatar}`} width={32} height={32} className='rounded-box'/>{data.username}</div>
                         <ul tabIndex={0} className='dropdown-content z-[1] menu p-2 border-none bg-info text-primary rounded-box w-full hover:bg-[#d7ab43]'>
-                            <Link><li><a>โปรไฟล์ของฉัน</a></li></Link>
+                            <Link to='/my-profile'><li><a>โปรไฟล์ของฉัน</a></li></Link>
                             <Link><li><a>ออกจากระบบ</a></li></Link>
                         </ul>
                     </div>

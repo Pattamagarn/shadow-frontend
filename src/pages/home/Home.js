@@ -9,12 +9,12 @@ const Home = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API}/authentication-account`, {withCredentials: true})
-        .then((response) => {
-            if(!response.data.status){
-                // navigate('/sign-in')
-            }
-        })
+        axios.get(`${process.env.REACT_APP_API}/authentication-account`, { withCredentials: true })
+            .then((response) => {
+                if (!response.data.status) {
+                    // navigate('/sign-in')
+                }
+            })
     }, [])
 
     const alertSuccess = (payload) => {
@@ -45,11 +45,11 @@ const Home = () => {
     }
 
     return (
-        <>
-        <MetaHeader title={`หน้าหลัก`} />
-        <Navigation/>
-        <Link to='/' className='btn btn-primary'>คลิกฉันสิ</Link>
-        </>
+        <div className='container mx-auto'>
+            <MetaHeader title={`หน้าหลัก`} />
+            <Navigation />
+            <Link to='/' className='btn btn-primary'>คลิกฉันสิ</Link>
+        </div>
     )
 }
 

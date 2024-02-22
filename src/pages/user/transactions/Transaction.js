@@ -3,6 +3,7 @@ import React,{useState,useEffect} from 'react'
 import MetaHeader from '../../../components/meta-header/MetaHeader'
 import Navigation from '../../../components/navbar/Navigation';
 import DataTable from 'react-data-table-component';
+import TitleBox from '../../../components/title-box/TitleBox';
 import axios from 'axios';
 
 
@@ -105,14 +106,7 @@ const Transaction = () => {
         <div className='container'>
             <MetaHeader title={`ธุรกรรมของฉัน`} />
             <Navigation />
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">ธุรกรรมของฉัน</div>
-                    
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
+            <TitleBox text='ธุรกรรมของฉัน' />
 
             <div className='container mt-5 px-40'>
                 <div className='text text-xl text-primary mx-5'>ประวัติการซื้อสินค้า</div>

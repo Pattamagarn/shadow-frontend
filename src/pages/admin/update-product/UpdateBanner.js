@@ -18,7 +18,7 @@ const UpdateBanner = () => {
           navigate('/general-management')
     }
     return (
-        <div>
+        <div className="container mx-auto">
             <MetaHeader title={`แก้ไขแบนเนอร์`} />
             <Navigation />
             <div className="flex flex-col mt-10 mx-44">

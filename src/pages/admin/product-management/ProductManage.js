@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react'
 import DataTable from 'react-data-table-component';
 import Navigation from '../../../components/navbar/Navigation';
 import MetaHeader from '../../../components/meta-header/MetaHeader';
+import TitleBox from '../../../components/title-box/TitleBox';
 
 const ProductManage = () => {
     const [data_general,setData_general] = useState([])
@@ -238,15 +239,8 @@ const ProductManage = () => {
             <MetaHeader title={`การจัดการสินค้า`} />
             <Navigation/>
             {/*ชื่อหัวข้อทั่วไป + ปุ่ม */}
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">จัดการสินค้า</div>
-                    <Link to='/insert-general-product'><button className="btn btn-success btn-sm mx-5">เพิ่มสินค้า</button></Link>
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
-        
+            <TitleBox text='จัดการสินค้า' tag='เพิ่มสินค้า' path='/insert-general-product' admin />
+            
             <div className='container mt-5 px-40'>
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergeneral}></input></div>
                 <DataTable
@@ -261,14 +255,7 @@ const ProductManage = () => {
             </div>
 
             {/*ชื่อหัวข้อกาชา + ปุ่ม */}
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">จัดการสินค้ากาชาปอง</div>
-                    <Link to='/insert-gacha-product'><button className="btn btn-success btn-sm mx-5">เพิ่มสินค้ากาชาปอง</button></Link>
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
+            <TitleBox text='จัดการสินค้ากาชาปอง' tag='เพิ่มสินค้ากาชาปอง' path='/insert-gacha-product' admin/>
             
             <div className='container mt-5 px-40'>
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergacha}></input></div>
@@ -284,14 +271,7 @@ const ProductManage = () => {
             </div>
 
             {/*ชื่อหัวข้อประมูล + ปุ่ม */}
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">จัดการสินค้าประมูล</div>
-                    <Link to='/insert-auction-product'><button className="btn btn-success btn-sm mx-5">เพิ่มสินค้าประมูล</button></Link>
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
+            <TitleBox text='จัดการสินค้าประมูล' tag='เพิ่มสินค้าประมูล' path='/insert-auction-product' admin/>
             
             <div className='container mt-5 px-40'>
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterauction}></input></div>

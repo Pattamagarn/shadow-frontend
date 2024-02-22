@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import Navigation from '../../../components/navbar/Navigation';
 import MetaHeader from '../../../components/meta-header/MetaHeader';
+import TitleBox from '../../../components/title-box/TitleBox';
 
 const GeneralManage = () => {
     
@@ -162,15 +163,7 @@ const GeneralManage = () => {
             <MetaHeader title={'การจัดการทั่วไป'} />
             <Navigation/>
             {/*banner */}
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">การจัดการแบนเนอร์</div>
-                    <Link to='/insert-banner'><button className="btn btn-success btn-sm mx-5">เพิ่มแบนเนอร์</button></Link>
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
-            
+            <TitleBox text="การจัดการแบนเนอร์" tag='เพิ่มแบนเนอร์' path='/insert-banner' admin='true'/>
             <div className='container mt-5 px-40'>
                 <DataTable
                     columns={columns_game_name}
@@ -184,14 +177,8 @@ const GeneralManage = () => {
             </div>
 
             {/*Game name */}
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">การจัดการชื่อเกม</div>
-                    <Link to='/insert-game-name'><button className="btn btn-success btn-sm mx-5">เพิ่มชื่อเกม</button></Link>
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
+            
+            <TitleBox text="การจัดการชื่อเกม" tag='เพิ่มชื่อเกม' path='/insert-game-name' admin/>
             <div className='container mt-5 px-40'>
                 <DataTable
                     columns={columns_banner}
@@ -203,13 +190,7 @@ const GeneralManage = () => {
                 </DataTable>
             </div>
             {/*payment method */}
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">การจัดการวิธีการชำระเงิน</div>
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
+            <TitleBox text="การจัดการวิธีการชำระเงิน" />
             <div className='container mt-5 px-40'>
                 <DataTable
                     columns={columns_payment_method}
@@ -217,7 +198,6 @@ const GeneralManage = () => {
                     fixedHeader
                     pagination 
                 >
-
                 </DataTable>
             </div>
         </div>

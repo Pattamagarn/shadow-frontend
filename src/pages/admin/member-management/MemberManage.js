@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import MetaHeader from '../../../components/meta-header/MetaHeader';
 import Navigation from '../../../components/navbar/Navigation';
+import TitleBox from '../../../components/title-box/TitleBox';
 import { Icon } from '@iconify/react'
 const MemberManage = () => {
     const [data_member, setData_member] = useState([])
@@ -64,34 +65,26 @@ const MemberManage = () => {
         setRecord_member(newData_member)
     }
     return (
-        <>
+        <div className="container">
             <MetaHeader title={`จัดการบัญชีผู้ใช้`} />
-            <div className="container">
-                <Navigation />
-                {/*ชื่อหัวข้อจัดการบัญชีผู้ใช้ + ปุ่ม */}
-                <div className="flex flex-col mt-10 mx-44">
-                    <div className="flex flex-row">
-                        <div className="text text-3xl text-primary">จัดการบัญชีผู้ใช้</div>
-                    </div>
+            <Navigation />
+            {/*ชื่อหัวข้อจัดการบัญชีผู้ใช้ + ปุ่ม */}
+            <TitleBox text='จัดการบัญชีผู้ใช้' />
+            <div className='container mt-5 px-40'>
+                <div className='text-end'> <input type='text' placeholder='ชื่อบัญชีหรือชื่อผู้ใช้' onChange={filtermember}></input></div>
+                <DataTable
+                    columns={columns_member}
+                    data={record_member.length <= 0 ? data_member : record_member}
+                    fixedHeader
+                    pagination
+                    persistTableHead={true}
+                    minRows={5}
+                >
+                </DataTable>
 
-                    <hr className="w-full h-2 my-5 border-10 bg-primary" />
-                </div>
-                <div className='container mt-5 px-40'>
-                    <div className='text-end'> <input type='text' placeholder='ชื่อบัญชีหรือชื่อผู้ใช้' onChange={filtermember}></input></div>
-                    <DataTable
-                        columns={columns_member}
-                        // data = {record_member}
-                        data={record_member.length <= 0 ? data_member : record_member}
-                        fixedHeader
-                        pagination
-                        persistTableHead={true}
-                        minRows={5}
-                    >
-                    </DataTable>
-
-                </div>
             </div>
-        </>
+        </div>
+
     )
 }
 

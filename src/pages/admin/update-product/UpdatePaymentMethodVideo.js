@@ -5,11 +5,11 @@ import Navigation from "../../../components/navbar/Navigation";
 
 const UpdatePaymentMethodVideo = () => {
     return (
-        <>
+        <div className="container mx-auto">
             <MetaHeader title={`เปลี่ยนวิดีโอวิธีการชำระเงิน`} />
             <Navigation />
             <Link to='/' className='btn btn-primary'>click me to home</Link>
-        </>
+        </div>
     )
 }
 

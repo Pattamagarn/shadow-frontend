@@ -2,6 +2,7 @@ import React from "react";
 import { Link,useNavigate} from "react-router-dom";
 import MetaHeader from "../../../components/meta-header/MetaHeader";
 import Navigation from "../../../components/navbar/Navigation";
+import TitleBox from "../../../components/title-box/TitleBox";
 import Swal from 'sweetalert2'
 
 
@@ -19,17 +20,11 @@ const InsertGameName = () => {
     }
 
     return (
-        <div>
+        <div className="container mx-auto">
             <MetaHeader title={`เพิ่มชื่อเกม`} />
             <Navigation />
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">เพิ่มชื่อเกม</div>
-                    
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
+            <TitleBox text='เพิ่มชื่อเกม'/>
+            
 
             <div className="flex flex-row mt-5 mx-44 justify-evenly"> 
                 <div className="text text-3xl">ลิงก์ภาพ</div>

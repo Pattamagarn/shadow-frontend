@@ -5,11 +5,11 @@ import Navigation from "../../../components/navbar/Navigation";
 
 const UpdateAuctionProduct = () => {
     return (
-        <>
+        <div className="container mx-auto">
             <MetaHeader title={`แก้ไขสินค้าประมูล`} />
             <Navigation />
             <Link to='/' className='btn btn-primary'>click me to home</Link>
-        </>
+        </div>
     )
 }
 

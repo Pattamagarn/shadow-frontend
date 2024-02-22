@@ -4,6 +4,7 @@ import Selection from "../../../components/select/Selection";
 import InputProduct from "../../../components/input-product/InputProduct";
 import Navigation from "../../../components/navbar/Navigation";
 import MetaHeader from "../../../components/meta-header/MetaHeader";
+import TitleBox from "../../../components/title-box/TitleBox";
 import axios from 'axios'
 
 const InsertGeneralProduct = () => {
@@ -27,16 +28,9 @@ const InsertGeneralProduct = () => {
 
     return (
         <div className="container mx-auto">
-             <MetaHeader title={`เพิ่มสินค้า`} />
+            <MetaHeader title={`เพิ่มสินค้า`} />
             <Navigation/>
-            <div className="flex flex-col mt-10 mx-44">
-                <div className="flex flex-row">
-                    <div className="text text-3xl text-primary">เพิ่มสินค้า</div>
-                    
-                </div>
-                
-                <hr className="w-full h-2 my-5 border-10 bg-primary"/>
-            </div>
+            <TitleBox text='เพิ่มสินค้า'/>
             
             <div className="grid mx-auto">
                 <InputProduct title='ชื่อสินค้า' type="text" placeholder="ชื่อสินค้า" className="input w-full max-w-xs bg-neutral " />

@@ -8,6 +8,7 @@ import SignUp from './pages/sign-up/SignUp'
 import SignIn from './pages/sign-in/SignIn'
 import ForgotPassword from './pages/forgot-password/ForgotPassword'
 import MyProfile from './pages/my-profile/MyProfile'
+import UpdateMyProfile from './pages/my-profile/UpdateMyProfile'
 
 // admin
 import Analysis from './pages/admin/analysis/Analysis'
@@ -35,6 +36,7 @@ import SaleProduct from './pages/user/product/sale-product/SaleProduct'
 import TopUp from './pages/user/top-up/TopUp'
 import Transaction from './pages/user/transactions/Transaction'
 import MyStore from './pages/user/my-store/MyStore'
+import Product from './pages/user/product/product-detail/Product'
 
 
 document.body.className = 'font-Kanit'
@@ -47,22 +49,16 @@ root.render(
         <Route exact path='/sign-up' element={<SignUp />} />
         <Route exact path='/sign-in' element={<SignIn />} />
         <Route exact path='/forgot-password' element={<ForgotPassword />} />
+        <Route exact path='/my-profile' element={<MyProfile />} />
+        <Route exact path='/update-my-profile' element={<UpdateMyProfile/>} />
+        {/* admin */}
+        <Route exact path='/analysis' element={<Analysis />} />
+        <Route exact path='/member-management' element={<MemberManage />} />
         <Route exact path='/general-management' element={<GeneralManage />} />
         <Route exact path='/product-management' element={<ProductManage />} />
-        <Route exact path='/member-management' element={<MemberManage />} />
         <Route exact path='/insert-auction-product' element={<InsertAuctionProduct />} />
         <Route exact path='/insert-gacha-product' element={<InsertGachaProduct />} />
         <Route exact path='/insert-general-product' element={<InsertGeneralProduct />} />
-        <Route exact path='/auction-product' element={<AuctionProduct />} />
-        <Route exact path='/gacha-product' element={<GachaProduct />} />
-        <Route exact path='/general-product' element={<GeneralProduct />} />
-        <Route exact path='/sale-product' element={<SaleProduct />} />
-        <Route exact path='/top-up' element={<TopUp />} />
-        <Route exact path='/transaction' element={<Transaction />} />
-        <Route exact path='/my-profile' element={<MyProfile />} />
-        <Route exact path='/my-store' element={<MyStore />} />
-        <Route exact path='/insert-banner' element={<InsertBanner />} />
-        <Route exact path='/insert-game-name' element={<InsertGameName />} />
         <Route exact path='/update-auction-product' element={<UpdateAuctionProduct />} />
         <Route exact path='/update-gacha-product' element={<UpdateGachaProduct />} />
         <Route exact path='/update-general-product' element={<UpdateGeneralProduct />} />
@@ -70,7 +66,25 @@ root.render(
         <Route exact path='/update-game-name' element={<UpdateGameName />} />
         <Route exact path='/update-payment-method-info' element={<UpdatePaymentMethodInfo />} />
         <Route exact path='/update-payment-method-Video' element={<UpdatePaymentMethodVideo />} />
-        <Route exact path='/analysis' element={<Analysis />} />
+        <Route exact path='/insert-banner' element={<InsertBanner />} />
+        <Route exact path='/insert-game-name' element={<InsertGameName />} />
+        {/* user */}
+        <Route exact path='/auction-product' element={<AuctionProduct />} />
+        <Route exact path='/gacha-product' element={<GachaProduct />} />
+        <Route exact path='/general-product' element={<GeneralProduct />} />
+        <Route exact path='/sale-product' element={<SaleProduct />} />
+        <Route exact path='/top-up' element={<TopUp />} />
+        <Route exact path='/transaction' element={<Transaction />} />
+        <Route exact path='/my-store' element={<MyStore />} />
+        <Route exact path='/product' element={<Product />} />
+
+
+
+
+
+
+
+        
         
 
 

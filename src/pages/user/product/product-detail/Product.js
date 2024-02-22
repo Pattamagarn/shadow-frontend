@@ -4,15 +4,15 @@ import Navigation from '../../../../components/navbar/Navigation'
 import MetaHeader from '../../../../components/meta-header/MetaHeader'
 import TitleBox from '../../../../components/title-box/TitleBox'
 
-const SaleProduct = () => {
-    return (
+const Product = () => {
+    return(
         <div className='container mx-auto'>
-            <MetaHeader title='สินค้าโปรโมชั่น' />
+            <MetaHeader title=''/>
             <Navigation />
-            <TitleBox text='สินค้าโปรโมชั่น' />
+            <TitleBox text='ชื่อสินค้า' />
             <Link to='/' className='btn btn-primary'>click!!!</Link>
         </div>
     )
 }
 
-export default SaleProduct;
+export default Product;
