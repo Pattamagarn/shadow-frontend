@@ -149,13 +149,6 @@ const GeneralManage = () => {
         console.log(`You clicked me! ${title}`);
     };
 
-    const paginationComponentOptions = {
-        rowsPerPageText: 'Filas por página',
-        rangeSeparatorText: 'de',
-        selectAllRowsItem: true,
-        selectAllRowsItemText: 'Todos',
-    };
-
     
 
     return(
@@ -170,7 +163,7 @@ const GeneralManage = () => {
                     data={data_game_name}
                     fixedHeader
                     pagination 
-                    paginationComponentOptions={paginationComponentOptions}
+                    persistTableHead={true}
                 >
 
                 </DataTable>
@@ -185,6 +178,7 @@ const GeneralManage = () => {
                     data={data_banner}
                     fixedHeader
                     pagination 
+                    persistTableHead={true}
                 >
 
                 </DataTable>
@@ -197,6 +191,7 @@ const GeneralManage = () => {
                     data={data_payment_method}
                     fixedHeader
                     pagination 
+                    persistTableHead={true}
                 >
                 </DataTable>
             </div>
