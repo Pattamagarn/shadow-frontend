@@ -164,6 +164,7 @@ const GeneralManage = () => {
                     fixedHeader
                     pagination 
                     persistTableHead={true}
+                    className='table px-10'
                 >
 
                 </DataTable>
@@ -179,6 +180,7 @@ const GeneralManage = () => {
                     fixedHeader
                     pagination 
                     persistTableHead={true}
+                    className='table px-10'
                 >
 
                 </DataTable>
@@ -192,6 +194,7 @@ const GeneralManage = () => {
                     fixedHeader
                     pagination 
                     persistTableHead={true}
+                    className='table px-10'
                 >
                 </DataTable>
             </div>

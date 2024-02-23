@@ -79,6 +79,7 @@ const MemberManage = () => {
                     pagination
                     persistTableHead={true}
                     minRows={5}
+                    className='table px-10'
                 >
                 </DataTable>
 

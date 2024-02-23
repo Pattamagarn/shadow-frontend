@@ -43,7 +43,7 @@ const MyStore = () => {
 
         },
         {
-            name: '',
+            name: 'ซ่อน',
             selector: row => row.hide,
             cell: (d) => [<button
                 key={d.title}>[d.hide ?
@@ -81,6 +81,7 @@ const MyStore = () => {
                     fixedHeader
                     pagination
                     persistTableHead={true}
+                    className='table px-10'
                 >
                 </DataTable>
             </div>

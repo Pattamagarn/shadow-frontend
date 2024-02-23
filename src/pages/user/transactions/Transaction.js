@@ -118,6 +118,7 @@ const Transaction = () => {
                     pagination 
                     persistTableHead={true}
                     minRows={5}
+                    className='table px-10'
                 >
                 </DataTable>
             </div>
@@ -132,6 +133,7 @@ const Transaction = () => {
                     pagination 
                     persistTableHead={true}
                     minRows={5}
+                    className='table px-10'
                 >
                 </DataTable>
             </div>

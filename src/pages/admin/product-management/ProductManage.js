@@ -250,6 +250,7 @@ const ProductManage = () => {
                     pagination 
                     persistTableHead={true}
                     minRows={5}
+                    className='table px-10'
                 >
                 </DataTable>
             </div>
@@ -265,6 +266,7 @@ const ProductManage = () => {
                     fixedHeader
                     pagination 
                     persistTableHead={true}
+                    className='table px-10'
                 >
 
                 </DataTable>
@@ -281,6 +283,7 @@ const ProductManage = () => {
                     fixedHeader
                     pagination 
                     persistTableHead={true}
+                    className='table px-10'
                 >
 
                 </DataTable>

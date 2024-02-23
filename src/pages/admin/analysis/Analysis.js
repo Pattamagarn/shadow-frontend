@@ -66,6 +66,7 @@ const Analysis = () => {
                     fixedHeader
                     pagination 
                     persistTableHead={true}
+                    className='table px-10'
                 >
                 </DataTable>
             </div>

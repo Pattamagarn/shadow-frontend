@@ -1,5 +1,5 @@
 import app from './connection'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail,updatePassword } from 'firebase/auth'
 import axios from 'axios'
 
 const authentication = getAuth(app)
@@ -65,4 +65,13 @@ export const resetPasswordAccount = (email, alertSuccess, alertError, alertWarni
     .catch(() => {
         alertError('การกู้คืนรหัสผ่านล้มเหลว')
     })
+}
+
+export const editAccount = (email, newPassword,alertSuccess,alertError,alertWarning) => {
+    updatePassword(email,newPassword)
+    .then(() => {
+        
+    })
+
+
 }
