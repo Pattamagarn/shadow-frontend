@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React,{ useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import Navigation from '../../../components/navbar/Navigation';
@@ -7,140 +7,140 @@ import MetaHeader from '../../../components/meta-header/MetaHeader';
 import TitleBox from '../../../components/title-box/TitleBox';
 
 const GeneralManage = () => {
-    
-    const [data_banner,setData_Banner] = useState([])
-    const [data_game_name,setData_game] = useState([])
-    const [data_payment_method,setData_payment_method] = useState([])
+
+    const [data_banner, setData_Banner] = useState([])
+    const [data_game_name, setData_game] = useState([])
+    const [data_payment_method, setData_payment_method] = useState([])
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/banner-select`)
-        .then((response) => {
-            setData_Banner(response.data.payload)
-            
-        })
-        .catch((error) => {})
+            .then((response) => {
+                setData_Banner(response.data.payload)
+
+            })
+            .catch((error) => { })
         axios.get(`${process.env.REACT_APP_API}/game-name-select`)
-        .then((response) => {
-            setData_game(response.data.payload)
-            
-        })
-        .catch((error) => {})
+            .then((response) => {
+                setData_game(response.data.payload)
+
+            })
+            .catch((error) => { })
         axios.get(`${process.env.REACT_APP_API}/payment-method-select`)
-        .then((response) => {
-            setData_payment_method(response.data.payload)
-            
-        })
-        .catch((error) => {})
+            .then((response) => {
+                setData_payment_method(response.data.payload)
+
+            })
+            .catch((error) => { })
 
     })
 
     const columns_banner = [
         {
-            name:'ลำดับ',
+            name: 'ลำดับ',
             selector: row => row.id,
-            sortable:true
+            sortable: true
         },
         {
-            name:'ลิงก์ภาพ',
+            name: 'ลิงก์ภาพ',
             selector: row => row.name
         },
         {
-            name:'แก้ไข',
+            name: 'แก้ไข',
             selector: row => row.update,
             cell: (d) => [
                 <p
-                  key={d.title}
-                  onClick={handleClick.bind(this, d.title)}
-                  className="btn btn-warning btn-sm w-6/12 "
-                  
+                    key={d.title}
+                    onClick={handleClick.bind(this, d.title)}
+                    className="btn btn-warning btn-sm w-6/12 "
+
                 >{`แก้ไข`}</p>
-              ]
+            ]
         },
         {
-            name:'ลบ',
+            name: 'ลบ',
             selector: row => row.delete,
             cell: (d) => [
                 <p
-                  key={d.title}
-                  onClick={handleClick.bind(this, d.title)}
-                  className="btn btn-error btn-sm w-6/12 "
-                  
+                    key={d.title}
+                    onClick={handleClick.bind(this, d.title)}
+                    className="btn btn-error btn-sm w-6/12 "
+
                 >{`ลบ`}</p>
-              ]
+            ]
         },
     ]
     const columns_game_name = [
         {
-            name:'ลำดับ',
+            name: 'ลำดับ',
             selector: row => row.id,
-            sortable:true
+            sortable: true
         },
         {
-            name:'เกม',
+            name: 'เกม',
             selector: row => row.name
         },
         {
-            name:'แก้ไข',
+            name: 'แก้ไข',
             selector: row => row.update,
             cell: (d) => [
                 <p
-                  key={d.title}
-                  onClick={handleClick.bind(this, d.title)}
-                  className="btn btn-warning btn-sm w-6/12 "
-                  
+                    key={d.title}
+                    onClick={handleClick.bind(this, d.title)}
+                    className="btn btn-warning btn-sm w-6/12 "
+
                 >{`แก้ไข`}</p>
-              ]
+            ]
         },
         {
-            name:'ลบ',
+            name: 'ลบ',
             selector: row => row.delete,
             cell: (d) => [
                 <p
-                  key={d.title}
-                  onClick={handleClick.bind(this, d.title)}
-                  className="btn btn-error btn-sm w-6/12 "
-                  
+                    key={d.title}
+                    onClick={handleClick.bind(this, d.title)}
+                    className="btn btn-error btn-sm w-6/12 "
+
                 >{`ลบ`}</p>
-              ]
+            ]
         },
     ]
     const columns_payment_method = [
         {
-            name:'ลำดับ',
+            name: 'ลำดับ',
             selector: row => row.id,
-            sortable:true
+            sortable: true
         },
         {
-            name:'วิธีการชำระเงิน',
-            
+            name: 'วิธีการชำระเงิน',
+
         },
         {
-            name:'',
+            name: '',
             selector: row => row.name
         },
         {
-            name:'เปลี่ยน',
+            name: 'เปลี่ยน',
             selector: row => row.update,
             cell: (d) => [
                 <p
-                  key={d.title}
-                  onClick={handleClick.bind(this, d.title)}
-                  className="btn btn-warning btn-sm w-6/12 "
-                  
+                    key={d.title}
+                    onClick={handleClick.bind(this, d.title)}
+                    className="btn btn-warning btn-sm w-6/12 "
+
                 >{`เปลี่ยน`}</p>
-              ]
+            ]
         },
         {
-            name:'ล้าง',
+            name: 'ล้าง',
             selector: row => row.delete,
             cell: (d) => [
                 <p
-                  key={d.title}
-                  onClick={handleClick.bind(this, d.title)}
-                  className="btn btn-error btn-sm w-6/12 "
-                  
+                    key={d.title}
+                    onClick={handleClick.bind(this, d.title)}
+                    className="btn btn-error btn-sm w-6/12 "
+
                 >{`ล้าง`}</p>
-              ]
+            ]
         },
     ]
 
@@ -149,20 +149,20 @@ const GeneralManage = () => {
         console.log(`You clicked me! ${title}`);
     };
 
-    
 
-    return(
+
+    return (
         <div className='container mx-auto'>
             <MetaHeader title={'การจัดการทั่วไป'} />
-            <Navigation/>
+            <Navigation />
             {/*banner */}
-            <TitleBox text="การจัดการแบนเนอร์" tag='เพิ่มแบนเนอร์' path='/insert-banner' admin='true'/>
+            <TitleBox text="การจัดการแบนเนอร์" tag='เพิ่มแบนเนอร์' path='/insert-banner' admin='true' />
             <div className='container mt-5 px-40'>
                 <DataTable
-                    columns={columns_game_name}
-                    data={data_game_name}
+                    columns={columns_banner}
+                    data={data_banner}
                     fixedHeader
-                    pagination 
+                    pagination
                     persistTableHead={true}
                     className='table px-10'
                 >
@@ -171,14 +171,14 @@ const GeneralManage = () => {
             </div>
 
             {/*Game name */}
-            
-            <TitleBox text="การจัดการชื่อเกม" tag='เพิ่มชื่อเกม' path='/insert-game-name' admin/>
+
+            <TitleBox text="การจัดการชื่อเกม" tag='เพิ่มชื่อเกม' path='/insert-game-name' admin />
             <div className='container mt-5 px-40'>
                 <DataTable
-                    columns={columns_banner}
-                    data={data_banner}
+                    columns={columns_game_name}
+                    data={data_game_name}
                     fixedHeader
-                    pagination 
+                    pagination
                     persistTableHead={true}
                     className='table px-10'
                 >
@@ -192,7 +192,7 @@ const GeneralManage = () => {
                     columns={columns_payment_method}
                     data={data_payment_method}
                     fixedHeader
-                    pagination 
+                    pagination
                     persistTableHead={true}
                     className='table px-10'
                 >
