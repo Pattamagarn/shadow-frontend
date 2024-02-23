@@ -21,8 +21,9 @@ const InsertGeneralProduct = () => {
     })
 
     const handleChange = (e) => {
-        console.log(e.target.files[0].name)
+        // console.log(e.target.files[0].name)
         setInfo(URL.createObjectURL(e.target.files[0]))
+        // console.log(URL.createObjectURL(e.target.files[0]))
     }
 
 
@@ -49,8 +50,8 @@ const InsertGeneralProduct = () => {
                     <input type="text" placeholder="คำอธิบายสินค้า" className="input w-full h-full max-w-xs bg-neutral" />
                 </div>
             </div>
-            <div className="flex flex-row mt-20 mb-10 mx-44 w-4/12 gap-x-16">
-                <Link to='/product-management'><button className="btn btn-success w-max">ยืนยันการเพิ่มสินค้า {console.log(`$info`)}</button></Link>
+            <div className="flex flex-row mt-20 mb-10 mx-44 w-4/12 gap-x-16">``
+                <Link to='/product-management'><button className="btn btn-success w-max">ยืนยันการเพิ่มสินค้า</button></Link>
                 <Link to='/product-management'><button className="btn btn-error w-max">ยกเลิกการเพิ่มสินค้า</button></Link>
             </div>
         </div>

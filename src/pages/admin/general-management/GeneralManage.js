@@ -14,11 +14,11 @@ const GeneralManage = () => {
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/banner-select`)
-            .then((response) => {
-                setData_Banner(response.data.payload)
-
-            })
-            .catch((error) => { })
+        .then((response) => {
+            setData_Banner(response.data.payload)
+            
+        })
+        .catch((error) => {})
         axios.get(`${process.env.REACT_APP_API}/game-name-select`)
             .then((response) => {
                 setData_game(response.data.payload)
@@ -36,9 +36,9 @@ const GeneralManage = () => {
 
     const columns_banner = [
         {
-            name: 'ลำดับ',
+            name:'ลำดับ',
             selector: row => row.id,
-            sortable: true
+            sortable:true
         },
         {
             name: 'ลิงก์ภาพ',
@@ -71,12 +71,12 @@ const GeneralManage = () => {
     ]
     const columns_game_name = [
         {
-            name: 'ลำดับ',
+            name:'ลำดับ',
             selector: row => row.id,
-            sortable: true
+            sortable:true
         },
         {
-            name: 'เกม',
+            name:'เกม',
             selector: row => row.name
         },
         {
@@ -106,9 +106,9 @@ const GeneralManage = () => {
     ]
     const columns_payment_method = [
         {
-            name: 'ลำดับ',
+            name:'ลำดับ',
             selector: row => row.id,
-            sortable: true
+            sortable:true
         },
         {
             name: 'วิธีการชำระเงิน',
