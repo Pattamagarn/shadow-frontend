@@ -16,7 +16,7 @@ const GeneralManage = () => {
         axios.get(`${process.env.REACT_APP_API}/banner-select`)
         .then((response) => {
             setData_Banner(response.data.payload)
-            
+    
         })
         .catch((error) => {})
         axios.get(`${process.env.REACT_APP_API}/game-name-select`)
@@ -35,11 +35,6 @@ const GeneralManage = () => {
     })
 
     const columns_banner = [
-        {
-            name:'ลำดับ',
-            selector: row => row.id,
-            sortable:true
-        },
         {
             name:'ลิงก์ภาพ',
             selector: row => row.name
@@ -71,13 +66,9 @@ const GeneralManage = () => {
     ]
     const columns_game_name = [
         {
-            name:'ลำดับ',
-            selector: row => row.id,
-            sortable:true
-        },
-        {
             name:'เกม',
-            selector: row => row.name
+            selector: row => row.game_name,
+            sortable:true
         },
         {
             name:'แก้ไข',
@@ -105,11 +96,6 @@ const GeneralManage = () => {
         },
     ]
     const columns_payment_method = [
-        {
-            name:'ลำดับ',
-            selector: row => row.id,
-            sortable:true
-        },
         {
             name:'วิธีการชำระเงิน',
             
@@ -159,8 +145,8 @@ const GeneralManage = () => {
             <TitleBox text="การจัดการแบนเนอร์" tag='เพิ่มแบนเนอร์' path='/insert-banner' admin='true'/>
             <div className='container mt-5 px-40'>
                 <DataTable
-                    columns={columns_game_name}
-                    data={data_game_name}
+                    columns={columns_banner}
+                    data={data_banner}
                     fixedHeader
                     pagination 
                     persistTableHead={true}
@@ -175,8 +161,8 @@ const GeneralManage = () => {
             <TitleBox text="การจัดการชื่อเกม" tag='เพิ่มชื่อเกม' path='/insert-game-name' admin/>
             <div className='container mt-5 px-40'>
                 <DataTable
-                    columns={columns_banner}
-                    data={data_banner}
+                    columns={columns_game_name}
+                    data={data_game_name}
                     fixedHeader
                     pagination 
                     persistTableHead={true}
