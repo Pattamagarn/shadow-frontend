@@ -28,13 +28,16 @@ const MyProfile = () => {
             <TitleBox text='โปรไฟล์ของฉัน' />
             <div className='flex justify-end px-44'>
                 <Link to='/update-my-profile'>
-                    <button className='btn btn-outline border-info text-info w-76 rounded-box hover:bg-info hover:border-info'>แก้ไขข้อมูลส่วนตัว</button>
+                    <button className='btn btn-outline border-info text-info w-64 rounded-box hover:bg-info hover:border-info'>แก้ไขข้อมูลส่วนตัว</button>
                 </Link>
             </div>
-            <div className='flex grid-col place-content-center mt-5'>
-                <img src={`${process.env.REACT_APP_ASSET}${account.avatar}`} alt='profile' width={256} height={256} className='image rounded-full' />
-
+            <div className='grid grid-col place-content-center w-auto mt-5 mx-40 mb-10'>
+                <img src={`${process.env.REACT_APP_ASSET}${account.avatar}`} alt='profile' width={350} height={350} className='image rounded-full' />
                 
+            </div>
+            <div className='grid gap-4 mt-10 mb-10 place-content-center'>
+                    <input placeholder='email' value={account.email} className='input bg-neutral w-96' />
+                    <input placeholder='username' value={account.username} className='input bg-neutral w-96 ' />
             </div>
 
         </div>

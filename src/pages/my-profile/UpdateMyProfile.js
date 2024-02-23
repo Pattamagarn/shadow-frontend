@@ -95,7 +95,7 @@ const UpdateMyProfile = () => {
             </div>
             <div className='flex place-content-center gap-16 mt-10 mb-10'>
                     <button className='btn btn-success w-60 rounded-3xl' type='submit'>บันทึก</button>
-                    <button className='btn btn-error w-60 rounded-3xl'>ยกเลิก</button>
+                    <Link to='/my-profile'><button className='btn btn-error w-60 rounded-3xl'>ยกเลิก</button></Link>
             </div>
         </div>
     )
