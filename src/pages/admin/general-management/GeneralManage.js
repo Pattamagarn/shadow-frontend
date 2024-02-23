@@ -36,11 +36,6 @@ const GeneralManage = () => {
 
     const columns_banner = [
         {
-            name:'ลำดับ',
-            selector: row => row.id,
-            sortable:true
-        },
-        {
             name: 'ลิงก์ภาพ',
             selector: row => row.name
         },
@@ -71,13 +66,8 @@ const GeneralManage = () => {
     ]
     const columns_game_name = [
         {
-            name:'ลำดับ',
-            selector: row => row.id,
-            sortable:true
-        },
-        {
-            name:'เกม',
-            selector: row => row.name
+            name:'ชื่อเกม',
+            selector: row => row.game_name
         },
         {
             name: 'แก้ไข',
@@ -105,11 +95,6 @@ const GeneralManage = () => {
         },
     ]
     const columns_payment_method = [
-        {
-            name:'ลำดับ',
-            selector: row => row.id,
-            sortable:true
-        },
         {
             name: 'วิธีการชำระเงิน',
 

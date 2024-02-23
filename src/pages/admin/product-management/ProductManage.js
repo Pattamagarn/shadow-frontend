@@ -240,7 +240,6 @@ const ProductManage = () => {
             <Navigation/>
             {/*ชื่อหัวข้อทั่วไป + ปุ่ม */}
             <TitleBox text='จัดการสินค้า' tag='เพิ่มสินค้า' path='/insert-general-product' admin />
-            
             <div className='container mt-5 px-40'>
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergeneral}></input></div>
                 <DataTable

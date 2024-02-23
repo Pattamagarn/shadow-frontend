@@ -12,7 +12,7 @@ const InsertGameName = () => {
     const [gameNameList, setGameNameList] = useState([])
     const [gameName, setGameName] = useState("")
 
-    const addGameName = () => {
+    const insertGamename = () => {
         axios.post(`${process.env.REACT_APP_API}/game-name-insert`,{
             game_name: gameName
         }).then(() => [
@@ -30,7 +30,8 @@ const InsertGameName = () => {
             icon: 'success',
             confirmButtonText: 'ตกลง'
         })
-        addGameName()
+        insertGamename()
+        // console.log(gameName)
         navigate('/general-management')
     }
 
