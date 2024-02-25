@@ -11,9 +11,9 @@ const ProductManage = () => {
     const [data_general,setData_general] = useState([])
     const [record_general,setRecord_general] = useState([])
     const [data_gacha,setData_gacha] = useState([])
-    const [record_gacha,setRecord_gacha] = useState(data_gacha)
+    const [record_gacha,setRecord_gacha] = useState([])
     const [data_auction,setData_auction] = useState([])
-    const [record_auction,setRecord_auction] = useState(data_auction)
+    const [record_auction,setRecord_auction] = useState([])
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/read-general-product`)
@@ -241,7 +241,7 @@ const ProductManage = () => {
             {/*ชื่อหัวข้อทั่วไป + ปุ่ม */}
             <TitleBox text='จัดการสินค้า' tag='เพิ่มสินค้า' path='/insert-general-product' admin />
             <div className='container mt-5 px-40'>
-                <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergeneral}></input></div>
+                <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergeneral} className='text-center border rounded-lg h-9'></input></div>
                 <DataTable
                     columns={columns_genaral}
                     data={record_general.length <= 0 ? data_general : record_general}
@@ -258,7 +258,7 @@ const ProductManage = () => {
             <TitleBox text='จัดการสินค้ากาชาปอง' tag='เพิ่มสินค้ากาชาปอง' path='/insert-gacha-product' admin/>
             
             <div className='container mt-5 px-40'>
-                <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergacha}></input></div>
+            <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergacha} className='text-center border rounded-lg h-9'></input></div>
                 <DataTable
                     columns={columns_gacha}
                     data={record_gacha.length <= 0 ? data_gacha : record_gacha}
@@ -275,7 +275,7 @@ const ProductManage = () => {
             <TitleBox text='จัดการสินค้าประมูล' tag='เพิ่มสินค้าประมูล' path='/insert-auction-product' admin/>
             
             <div className='container mt-5 px-40'>
-                <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterauction}></input></div>
+            <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterauction} className='text-center border rounded-lg h-9'></input></div>
                 <DataTable
                     columns={columns_auction}
                     data={record_auction.length <= 0 ? data_auction : record_auction}

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react'
 import MetaHeader from "../../../components/meta-header/MetaHeader";
 import Navigation from "../../../components/navbar/Navigation";
 import TitleBox from "../../../components/title-box/TitleBox";
 import DataTable from 'react-data-table-component';
+import axios from "axios";
 
 const Analysis = () => {
 
@@ -12,6 +13,14 @@ const Analysis = () => {
     const [aysel, setAysel] = useState([])
     const [amount, setAmount] = useState([])
     const [product, setProduct] = useState([])
+
+    // useEffect(() => {
+    //     axios.get(`${process.env.REACT_APP_API}`)
+    //     .then((response) => {
+            
+            
+    //     })
+    // })
 
     const [top_product, setTop_product] = ([])
     const columns_top_product = [

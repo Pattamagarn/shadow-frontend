@@ -110,7 +110,8 @@ const Transaction = () => {
 
             <div className='container mt-5 px-40'>
                 <div className='text text-xl text-primary mx-5'>ประวัติการซื้อสินค้า</div>
-                <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterHistoryProduct}></input></div>
+                <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterHistoryProduct} className='text-center border rounded-lg h-9'></input></div>
+                {/* <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterHistoryProduct}></input></div> */}
                 <DataTable
                     columns={columns_history_product}
                     data={record_history_product.length <= 0 ? history_product : record_history_product}
@@ -125,7 +126,8 @@ const Transaction = () => {
 
             <div className='container mt-5 px-40'>
                 <div className='text text-xl text-primary mx-5'>ประวัติการเติมเงิน</div>
-                <div className='text-end'> <input type='text' placeholder='วันที่-เวลา จำนวน หรือ ราคา' onChange={filterHistoryPayment}></input></div>
+                <div className='text-end'> <input type='text' placeholder='วันที่-เวลา จำนวน หรือ ราคา' onChange={filterHistoryPayment} className='text-center border rounded-lg h-9'></input></div>
+                {/* <div className='text-end'> <input type='text' placeholder='วันที่-เวลา จำนวน หรือ ราคา' onChange={filterHistoryPayment}></input></div> */}
                 <DataTable
                     columns={columns_history_payment}
                     data={record_history_payment.length <= 0 ? history_payment : record_history_payment}

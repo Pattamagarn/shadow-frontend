@@ -20,24 +20,28 @@ const GeneralManage = () => {
         })
         .catch((error) => {})
         axios.get(`${process.env.REACT_APP_API}/game-name-select`)
-            .then((response) => {
-                setData_game(response.data.payload)
+        .then((response) => {
+            setData_game(response.data.payload)
 
-            })
-            .catch((error) => { })
+        })
+        .catch((error) => { })
         axios.get(`${process.env.REACT_APP_API}/payment-method-select`)
-            .then((response) => {
-                setData_payment_method(response.data.payload)
+        .then((response) => {
+            setData_payment_method(response.data.payload)
 
-            })
-            .catch((error) => { })
+        })
+        .catch((error) => { })
 
     })
 
     const columns_banner = [
         {
+            name: 'ลำดับ',
+            selector: row => row.uuid
+        },
+        {
             name: 'ลิงก์ภาพ',
-            selector: row => row.name
+            selector: row => row.information
         },
         {
             name: 'แก้ไข',
@@ -65,6 +69,12 @@ const GeneralManage = () => {
         },
     ]
     const columns_game_name = [
+        {
+            name:'ลำดับ',
+            selector: row => row.uuid,
+            sortable:true
+            
+        },
         {
             name:'ชื่อเกม',
             selector: row => row.game_name
@@ -96,12 +106,20 @@ const GeneralManage = () => {
     ]
     const columns_payment_method = [
         {
+            name: 'ลำดับ',
+            selector: row => row.uuid,
+            sortable:true
+        },
+
+        {
             name: 'วิธีการชำระเงิน',
+            selector: row => row.method
+
 
         },
         {
             name: '',
-            selector: row => row.name
+            selector: row => row.information
         },
         {
             name: 'เปลี่ยน',

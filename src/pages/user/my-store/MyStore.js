@@ -10,6 +10,7 @@ import axios from 'axios'
 const MyStore = () => {
 
     const [data_product, setData_product] = useState([])
+    const [record_product,setRecord_product] = useState([])
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/read-store-product`, { withCredentials: true })
@@ -66,6 +67,13 @@ const MyStore = () => {
         },
     ]
 
+    const filterData = (event) => {
+        const newData_product = data_product.filter(row => {
+            return row.game_name.toLowerCase().includes(event.target.value.toLowerCase()) || row.name.toLowerCase().includes(event.target.value.toLowerCase())
+        })
+        setRecord_product(newData_product)
+    }
+
     const handleClick = (title) => {
         console.log(`You clicked me! ${title}`);
       };
@@ -75,9 +83,10 @@ const MyStore = () => {
             <Navigation />
             <TitleBox text='คลังของฉัน' />
             <div className='container mt-5 px-40'>
+            <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterData} className='text-center border rounded-lg h-9'></input></div>
                 <DataTable
                     columns={columns_data_product}
-                    data={data_product}
+                    data={record_product.length <= 0 ? data_product : record_product}
                     fixedHeader
                     pagination
                     persistTableHead={true}

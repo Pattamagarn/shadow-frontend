@@ -6,32 +6,49 @@ import Navigation from '../../../components/navbar/Navigation';
 import TitleBox from '../../../components/title-box/TitleBox';
 import Swal from 'sweetalert2'
 import axios from 'axios'
-import pic1 from '../../../asset/avatar/a.png'
 
 const TopUp = () => {
 
     const navigate = useNavigate()
     const [aysel, setAysel] = useState('')
     const [baht, setBaht] = useState('')
-    const [data, setData] = useState([])
+    // const [data, setData] = useState([])
+    const [payment,setPayment] = useState([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API}/authentication-account`, { withCredentials: true })
-            .then((response) => {
-                if (response.data.status) {
-                    setData(response.data.payload)
-                }
-            })
+        axios.get(`${process.env.REACT_APP_API}/payment-method-select`)
+        .then((response) => {
+            if (response.data.status) {
+                setPayment(response.data.payload)
+                // console.log(payment.information)
+            }
+        })
     }, [])
 
     const convertCurrency = (opt, text) => {
-        if (opt == 1) {
-            setBaht(text.target.value)
-            setAysel((text.target.value) * 2)
+        if (opt === 1) {
+            if((text.target.value < 0) || (text.target.value === ''))
+            {
+                setAysel()
+                setBaht()
+            }
+            else{
+                setBaht(text.target.value)
+                setAysel((text.target.value) * 2)
+            }
+            
         }
         else {
-            setBaht((text.target.value) / 2)
-            setAysel(text.target.value)
+            if((text.target.value < 0) || (text.target.value === ''))
+            {
+                setAysel()
+                setBaht()
+            }
+            else{
+                setBaht((text.target.value) / 2)
+                setAysel(text.target.value)
+            }
+            
         }
 
     }
@@ -45,7 +62,7 @@ const TopUp = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container mb-10'>
             <MetaHeader title={`หน้าเติมเงิน`} />
             <Navigation />
             <TitleBox text="เติม Aysel" />
@@ -70,9 +87,11 @@ const TopUp = () => {
                 </div>
                 <dialog id="modal" className='modal'>
                     <div className='modal-box w-svh max-w-5xl'>
-                        <div className='grid grid-rows grid-flow-col gap-2'>
-                            <img src={pic1} alt='picture-1' width={250} height={250}></img>
-                            
+                        <div className='grid place-content-center'>
+                            <div className='text text-2xl mb-7'>ภาพวิธีการชำระเงิน</div>
+                            <img src={`http://localhost:3001/asset/payment-method/payment-method.png`} alt='payment-method-info' width={850} height={250} />
+                            {/* <img src={`http://localhost:3001/asset/payment-method/${payment.information}`} alt='payment-method-info' width={850} height={250} /> */}
+
                         </div>
                         <div className='modal-action'>
                             <form method='dialog'>
@@ -89,8 +108,10 @@ const TopUp = () => {
 
                 <dialog id="modal-1" className='modal'>
                     <div className='modal-box w-svh max-w-5xl'>
-                        <div className='grid grid-rows grid-flow-col gap-2'>
-                            
+                        <div className='grid place-content-center'>
+                            <div className='text text-2xl mb-6'>วิดีโอวิธีการชำระเงิน</div>
+                            <iframe src='https://www.youtube.com/embed/smdmEhkIRVc?si=mq3E5TZNz1Qi352p' title="payment-method-video" width="660" height="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            {/* <iframe src={`${payment.information}`} title="payment-method-video" width="660" height="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                         </div>
                         <div className='modal-action'>
                             <form method='dialog'>
