@@ -67,11 +67,20 @@ export const resetPasswordAccount = (email, alertSuccess, alertError, alertWarni
     })
 }
 
-export const editAccount = (email, newPassword,alertSuccess,alertError,alertWarning) => {
-    updatePassword(email,newPassword)
-    .then(() => {
-        
-    })
-
-
-}
+// export const editAccount = (account, oldPass,newPass,alertSuccess,alertError,alertWarning) => {
+//     signInWithEmailAndPassword(authentication,account.email.toLowerCase(),oldPass)
+//     .then((userCredential) => {
+//         const user = userCredential.user
+//         updatePassword(user,newPass)
+//         .then(() => {
+//             console.log('succeeed')
+//             alertSuccess('แก้ไขข้อมูลสำเร็จ')
+//         })
+//         .catch(() => {
+//             alertError('แก้ไขข้อมูลไม่สำเร็จ')
+//         })
+//     })
+//     .catch(() => {
+//         alertError('รหัสเก่าไม่ถูกต้อง')
+//     })
+// }

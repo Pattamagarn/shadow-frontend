@@ -13,7 +13,7 @@ const MyProfile = () => {
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/authentication-account`, { withCredentials: true })
             .then((response) => {
-                console.log(response.data.payload)
+                // console.log(response.data.payload)
                 setAccount(response.data.payload)
 
 
