@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react';
+import React,{ useEffect,useState } from 'react';
 import { Link } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import Navigation from '../../../components/navbar/Navigation';
@@ -7,10 +7,11 @@ import MetaHeader from '../../../components/meta-header/MetaHeader';
 import TitleBox from '../../../components/title-box/TitleBox';
 
 const GeneralManage = () => {
-
-    const [data_banner, setData_Banner] = useState([])
-    const [data_game_name, setData_game] = useState([])
-    const [data_payment_method, setData_payment_method] = useState([])
+    
+    const [data_banner,setData_Banner] = useState([])
+    const [data_game_name,setData_game] = useState([])
+    const [data_payment_method,setData_payment_method] = useState([])
+    const [uuid, setUUID] = useState("")
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/banner-select`)
@@ -46,24 +47,24 @@ const GeneralManage = () => {
         {
             name: 'แก้ไข',
             selector: row => row.update,
-            cell: (d) => [
+            cell: (item) => [
                 <p
-                    key={d.title}
-                    onClick={handleClick.bind(this, d.title)}
-                    className="btn btn-warning btn-sm w-6/12 "
-
+                  key={item.title}
+                  onClick={handleClick.bind(this, item.title)}
+                  className="btn btn-warning btn-sm w-6/12 "
+                  
                 >{`แก้ไข`}</p>
             ]
         },
         {
             name: 'ลบ',
             selector: row => row.delete,
-            cell: (d) => [
+            cell: (item) => [
                 <p
-                    key={d.title}
-                    onClick={handleClick.bind(this, d.title)}
-                    className="btn btn-error btn-sm w-6/12 "
-
+                  key={item.title}
+                  onClick={handleClick.bind(this, item.title)}
+                  className="btn btn-error btn-sm w-6/12 "
+                  
                 >{`ลบ`}</p>
             ]
         },
@@ -82,24 +83,24 @@ const GeneralManage = () => {
         {
             name: 'แก้ไข',
             selector: row => row.update,
-            cell: (d) => [
+            cell: (item) => [
                 <p
-                    key={d.title}
-                    onClick={handleClick.bind(this, d.title)}
-                    className="btn btn-warning btn-sm w-6/12 "
-
+                  key={item.title}
+                  onClick={handleClick.bind(this, item.title)}
+                  className="btn btn-warning btn-sm w-6/12 "
+                  
                 >{`แก้ไข`}</p>
             ]
         },
         {
             name: 'ลบ',
             selector: row => row.delete,
-            cell: (d) => [
+            cell: (item) => [
                 <p
-                    key={d.title}
-                    onClick={handleClick.bind(this, d.title)}
-                    className="btn btn-error btn-sm w-6/12 "
-
+                  key={item.title}
+                  onClick={handleDeleteGameName.bind(this,item.uuid)}
+                  className="btn btn-error btn-sm w-6/12 "
+                  
                 >{`ลบ`}</p>
             ]
         },
@@ -124,24 +125,24 @@ const GeneralManage = () => {
         {
             name: 'เปลี่ยน',
             selector: row => row.update,
-            cell: (d) => [
+            cell: (item) => [
                 <p
-                    key={d.title}
-                    onClick={handleClick.bind(this, d.title)}
-                    className="btn btn-warning btn-sm w-6/12 "
-
+                  key={item.title}
+                  onClick={handleClick.bind(this, item.title)}
+                  className="btn btn-warning btn-sm w-6/12 "
+                  
                 >{`เปลี่ยน`}</p>
             ]
         },
         {
             name: 'ล้าง',
             selector: row => row.delete,
-            cell: (d) => [
+            cell: (item) => [
                 <p
-                    key={d.title}
-                    onClick={handleClick.bind(this, d.title)}
-                    className="btn btn-error btn-sm w-6/12 "
-
+                  key={item.title}
+                  onClick={handleClick.bind(this, item.title)}
+                  className="btn btn-error btn-sm w-6/12 "
+                  
                 >{`ล้าง`}</p>
             ]
         },
@@ -150,6 +151,17 @@ const GeneralManage = () => {
 
     const handleClick = (title) => {
         console.log(`You clicked me! ${title}`);
+    };
+    
+    const handleDeleteGameName = (uuid) => {
+        console.log(uuid);
+        axios.delete(`${process.env.REACT_APP_API}/game-name-delete/${uuid}`)
+            .then((response) => {
+                console.log('Data deleted successfully');
+            })
+            .catch((error) => {
+                console.error('Error deleting data:', error);
+            });
     };
 
 
