@@ -65,7 +65,7 @@ root.render(
         <Route exact path='/update-banner' element={<UpdateBanner />} />
         <Route exact path='/update-game-name' element={<UpdateGameName />} />
         <Route exact path='/update-payment-method-info' element={<UpdatePaymentMethodInfo />} />
-        <Route exact path='/update-payment-method-Video' element={<UpdatePaymentMethodVideo />} />
+        <Route exact path='/update-payment-method-video' element={<UpdatePaymentMethodVideo />} />
         <Route exact path='/insert-banner' element={<InsertBanner />} />
         <Route exact path='/insert-game-name' element={<InsertGameName />} />
         {/* user */}

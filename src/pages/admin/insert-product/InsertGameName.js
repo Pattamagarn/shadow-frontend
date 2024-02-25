@@ -46,7 +46,8 @@ const InsertGameName = () => {
                 <div className="text text-3xl">ชื่อเกม</div>
                 <input 
                     type="text" 
-                    className="file-input w-6/12 bg-neutral" 
+                    className="file-input w-6/12 bg-neutral px-5" 
+                    placeholder="เพิ่มชื่อเกม"
                     onChange={(event) => {
                         setGameName(event.target.value)
                     }} 

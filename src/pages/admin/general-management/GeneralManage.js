@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React,{ useEffect,useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import Navigation from '../../../components/navbar/Navigation';
 import MetaHeader from '../../../components/meta-header/MetaHeader';
@@ -8,6 +8,7 @@ import TitleBox from '../../../components/title-box/TitleBox';
 
 const GeneralManage = () => {
     
+    const navigate = useNavigate()
     const [data_banner,setData_Banner] = useState([])
     const [data_game_name,setData_game] = useState([])
     const [data_payment_method,setData_payment_method] = useState([])
@@ -50,7 +51,7 @@ const GeneralManage = () => {
             cell: (item) => [
                 <p
                   key={item.title}
-                  onClick={handleClick.bind(this, item.title)}
+                  onClick={handleUpdateBanner.bind(this, item.title)}
                   className="btn btn-warning btn-sm w-6/12 "
                   
                 >{`แก้ไข`}</p>
@@ -86,7 +87,7 @@ const GeneralManage = () => {
             cell: (item) => [
                 <p
                   key={item.title}
-                  onClick={handleClick.bind(this, item.title)}
+                  onClick={handleUpdateGameName.bind(this, item.title)}
                   className="btn btn-warning btn-sm w-6/12 "
                   
                 >{`แก้ไข`}</p>
@@ -125,10 +126,16 @@ const GeneralManage = () => {
         {
             name: 'เปลี่ยน',
             selector: row => row.update,
-            cell: (item) => [
+            cell: (item) => [ item.method === "ภาพวิธีการชำระเงิน" ? 
                 <p
                   key={item.title}
-                  onClick={handleClick.bind(this, item.title)}
+                  onClick={handleUpdatePaymentMethodInfo.bind(this, item.title)}
+                  className="btn btn-warning btn-sm w-6/12 "
+                  
+                >{`เปลี่ยน`}</p> : 
+                <p
+                  key={item.title}
+                  onClick={handleUpdatePaymentMethodVideo.bind(this, item.title)}
                   className="btn btn-warning btn-sm w-6/12 "
                   
                 >{`เปลี่ยน`}</p>
@@ -151,6 +158,18 @@ const GeneralManage = () => {
 
     const handleClick = (title) => {
         console.log(`You clicked me! ${title}`);
+    };
+    const handleUpdateGameName = (title) => {
+        navigate('/update-game-name')
+    };
+    const handleUpdatePaymentMethodInfo = (title) => {
+        navigate('/update-payment-method-info')
+    };
+    const handleUpdatePaymentMethodVideo = (title) => {
+        navigate('/update-payment-method-video')
+    };
+    const handleUpdateBanner = (title) => {
+        navigate('/update-banner')
     };
     
     const handleDeleteGameName = (uuid) => {
